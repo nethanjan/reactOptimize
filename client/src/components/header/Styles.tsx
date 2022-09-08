@@ -63,15 +63,3 @@ export const NavSearch = styled.div`
 	font-size: 2.5rem;
 	font-weight: 800;
 `;
-
-export const Input = styled.input`
-	font-size: 18px;
-	padding: 10px;
-	margin: 10px;
-	background: #cbe5ff;
-	border: none;
-	border-radius: 3px;
-	::placeholder {
-		color: #333e49;
-	}
-`;

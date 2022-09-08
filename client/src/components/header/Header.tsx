@@ -1,11 +1,11 @@
 import React from "react";
+import Search from "../search/Search";
 import {
 	Nav,
 	NavbarInnerContainer,
 	NavLogo,
 	NavSearch,
 	NavbarExtendedContainer,
-	Input,
 } from "./Styles";
 
 function Header() {
@@ -14,10 +14,10 @@ function Header() {
 			<NavbarInnerContainer>
 				<NavLogo>Home24</NavLogo>
 				<NavSearch>
-					<Input placeholder={"Search"} />
+					<Search />
 				</NavSearch>
 			</NavbarInnerContainer>
-			<NavbarExtendedContainer></NavbarExtendedContainer>
+			<NavbarExtendedContainer />
 		</Nav>
 	);
 }

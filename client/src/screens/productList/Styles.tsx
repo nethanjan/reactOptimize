@@ -2,31 +2,26 @@ import styled from "styled-components";
 
 export const PageContainer = styled.div`
 	display: flex;
-	height: 100%;
-	padding: 20px;
+	flex-direction: column;
+	flex: 5;
 `;
 
 export const LeftColumn = styled.div`
-	display: flex;
-	min-height: 100%;
-	flex-grow: 1;
-	flex-direction: column;
-	border-right: solid #48494a;
+	background: #95b5b1;
+	flex: 1;
 `;
 
 export const RightColumn = styled.div`
 	min-height: 100%;
 	flex-grow: 9;
-	padding: $largespace;
 	margin-left: 20px;
 `;
 
-export const TopRight = styled.div`
-	flex-shrink: 0;
+export const TopContent = styled.div`
 	display: flex;
 `;
 
-export const Bottom = styled.div`
-	flex-grow: 1;
-	overflow-y: auto;
+export const PageContent = styled.div`
+	display: flex;
+	flex-wrap: wrap;
 `;

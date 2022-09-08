@@ -12,10 +12,10 @@ export var formatter = new Intl.NumberFormat(intlNumberFormatValues[0], {
 });
 
 type State = {
-	categories: Category[];
+	categories: any[];
 };
 
-export var ArticleCard = ({ article }: { article: Article }) => {
+export var ArticleCard = ({ article }: { article: any }) => {
 	return (
 		<div className={"article"}>
 			<img src={article.images[0].path} />
@@ -85,7 +85,7 @@ class ArticleList extends React.Component {
 
 	render() {
 		var articles = this.state.categories.map((category) => {
-			return category.categoryArticles.articles.map((article) => {
+			return category.categoryArticles.articles.map((article: any) => {
 				return <ArticleCard article={article} />;
 			});
 		});
@@ -99,7 +99,7 @@ class ArticleList extends React.Component {
 
 				<div className={"sidebar"}>
 					<h3>Kategorien</h3>
-					{this.state.categories.length ? (
+					{/* {this.state.categories.length ? (
 						<ul>
 							{this.state.categories[0].childrenCategories.list.map(
 								({ name, urlPath }) => {
@@ -113,7 +113,7 @@ class ArticleList extends React.Component {
 						</ul>
 					) : (
 						"Loading..."
-					)}
+					)} */}
 				</div>
 
 				<div className={"content"}>
