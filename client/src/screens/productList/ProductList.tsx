@@ -21,12 +21,19 @@ import {
 
 const ProductList = () => {
 	const [articles, setArticles] = useState<Article[]>([]);
+	const [loadingContent, setLoading] = useState(true);
 	const productsData = useSelector((state: RootReducer) => state.products);
 	const searchValue = useSelector((state: RootReducer) => state.search.title);
 
 	useEffect(() => {
 		GetProductsAction();
 	}, []);
+
+	useEffect(() => {
+		if (!productsData.loading) {
+			setLoading(false);
+		}
+	}, [productsData.loading]);
 
 	useEffect(() => {
 		if (productsData.name !== "") {
@@ -48,10 +55,6 @@ const ProductList = () => {
 	let articleCount = productsData.articleCount;
 	if (searchValue !== "") articleCount = articles.length;
 
-	if (productsData.name === "") {
-		return <div></div>;
-	}
-
 	return (
 		<PageTemplate>
 			<LeftColumn>
@@ -60,12 +63,27 @@ const ProductList = () => {
 			<PageContainer>
 				<Header />
 				<RightColumn>
-					<TopContent>
-						<ContentTitle title={productsData.name} count={articleCount} />
-					</TopContent>
-					<PageContent>
-						<Content content={articles} />
-					</PageContent>
+					{productsData.name ? (
+						<>
+							<TopContent>
+								<ContentTitle
+									title={productsData.name}
+									count={articleCount}
+									loading={loadingContent}
+								/>
+							</TopContent>
+							<PageContent>
+								<Content content={articles} />
+							</PageContent>
+						</>
+					) : (
+						<TopContent>
+							<ContentTitle
+								title={"Loading..."}
+								loading={loadingContent}
+							></ContentTitle>
+						</TopContent>
+					)}
 				</RightColumn>
 				<Footer />
 			</PageContainer>

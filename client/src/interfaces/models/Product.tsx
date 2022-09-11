@@ -8,4 +8,5 @@ export interface Product {
 		name: string;
 		urlPath: string;
 	}>;
+	loading: boolean;
 }

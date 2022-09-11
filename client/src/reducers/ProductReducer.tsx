@@ -5,6 +5,7 @@ const initialState = {
 	articleCount: 0,
 	categoryArticles: [],
 	childrenCategories: [],
+	loading: true,
 };
 
 export default function (state = initialState, action: DispatcherAction) {
@@ -17,6 +18,11 @@ export default function (state = initialState, action: DispatcherAction) {
 				childrenCategories: action.payload.childrenCategories.list
 					? action.payload.childrenCategories.list
 					: [],
+				loading: false,
+			};
+		case "FAILED_GET_POSTS":
+			return {
+				loading: false,
 			};
 		default:
 			return state;

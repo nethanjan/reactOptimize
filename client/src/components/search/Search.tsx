@@ -8,7 +8,12 @@ function Search() {
 	};
 
 	return (
-		<Input placeholder={"Search"} onChange={onSearchHandler} name="search" />
+		<Input
+			placeholder={"Search"}
+			onChange={onSearchHandler}
+			name="search"
+			id="Search"
+		/>
 	);
 }
 

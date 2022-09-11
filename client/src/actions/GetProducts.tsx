@@ -47,5 +47,9 @@ export function GetProductsAction() {
 		})
 		.catch((err) => {
 			console.log(err);
+			store.dispatch({
+				type: "FAILED_GET_POSTS",
+				payload: "Failed to fetch prodcuts",
+			});
 		});
 }

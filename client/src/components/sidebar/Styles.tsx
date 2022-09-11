@@ -33,3 +33,11 @@ export const LinkItem = styled.a`
 		color: #fff;
 	}
 `;
+
+export const NotFoundItem = styled.div`
+	color: #000;
+	text-decoration: none;
+	padding: 10px 0;
+	border-bottom: 1px solid #fdfdfd30;
+	display: block;
+`;
