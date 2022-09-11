@@ -7,7 +7,7 @@ import ContentTitle from './ContentTitle'
 const pageTitle = 'Page Title'
 const pageCount = 1001
 
-test("it renders the loading text in the page content when api hasn't fetch data", () => {
+test('it renders the loading text in the page content when api hasn\'t fetch data', () => {
   render(<ContentTitle title={''} count={0} loading={true} />)
   expect(screen.getByText('Loading...')).toBeInTheDocument()
 })
