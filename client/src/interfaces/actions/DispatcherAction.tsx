@@ -1,4 +1,4 @@
 export interface DispatcherAction {
-	type: string;
-	payload: any;
+  type: string
+  payload: any
 }

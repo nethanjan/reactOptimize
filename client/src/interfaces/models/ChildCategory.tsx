@@ -1,4 +1,4 @@
 export type ChildCategory = {
-	name: string;
-	urlPath: string;
-};
+  name: string
+  urlPath: string
+}

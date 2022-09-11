@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 
-import { Container } from "./Styles";
+import { Container } from './Styles'
 
 interface Props {
-	children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const PageTemplate = (prop: Props) => {
-	return <Container>{prop.children}</Container>;
-};
+  return <Container>{prop.children}</Container>
+}
 
-export default PageTemplate;
+export default PageTemplate

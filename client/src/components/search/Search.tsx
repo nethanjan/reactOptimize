@@ -1,20 +1,13 @@
-import React from "react";
-import { SearchProduct } from "../../actions/Search";
-import { Input } from "./Style";
+import React from 'react'
+import { SearchProduct } from '../../actions/Search'
+import { Input } from './Style'
 
 function Search() {
-	const onSearchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-		SearchProduct(e.target.value);
-	};
+  const onSearchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    SearchProduct(e.target.value)
+  }
 
-	return (
-		<Input
-			placeholder={"Search"}
-			onChange={onSearchHandler}
-			name="search"
-			id="Search"
-		/>
-	);
+  return <Input placeholder={'Search'} onChange={onSearchHandler} name='search' id='Search' />
 }
 
-export default Search;
+export default Search

@@ -1,25 +1,25 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import ProductList from "./ProductList";
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import ProductList from './ProductList'
 
-import { BrowserRouter } from "react-router-dom";
-import { configureStore } from "@reduxjs/toolkit";
-import { Provider } from "react-redux";
-import Reducer from "../../reducers/Reducer";
+import { BrowserRouter } from 'react-router-dom'
+import { configureStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+import Reducer from '../../reducers/Reducer'
 
-const store = configureStore({ reducer: Reducer });
+const store = configureStore({ reducer: Reducer })
 
-function renderWithProviders(ui: any = {}) {
-	return render(<Provider store={store}>{ui}</Provider>, {
-		wrapper: BrowserRouter,
-	});
+function renderWithProviders(ui: React.ReactNode = {}) {
+  return render(<Provider store={store}>{ui}</Provider>, {
+    wrapper: BrowserRouter,
+  })
 }
 
-describe("FollowersList", () => {
-	test("it renders the given site name in the header", async () => {
-		renderWithProviders(<ProductList />);
+describe('Product list render', () => {
+  test('it renders the loading text when component called without mocking api call', async () => {
+    renderWithProviders(<ProductList />)
 
-		const followerDivElement = screen.getByText(`Möbel`);
-		expect(followerDivElement).toBeInTheDocument();
-	});
-});
+    const followerDivElement = screen.getByText('Loading...')
+    expect(followerDivElement).toBeInTheDocument()
+  })
+})

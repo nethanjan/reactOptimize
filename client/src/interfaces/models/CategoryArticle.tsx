@@ -1,5 +1,5 @@
-import { Article } from "./Article";
+import { Article } from './Article'
 
 export type CategoryArticle = {
-  articles: Article[];
-};
+  articles: Article[]
+}

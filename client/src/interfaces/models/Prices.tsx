@@ -1,6 +1,6 @@
 export type Prices = {
-  currency: string;
+  currency: string
   regular: {
-    value: number;
-  };
-};
+    value: number
+  }
+}

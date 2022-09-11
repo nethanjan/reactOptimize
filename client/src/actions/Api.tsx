@@ -1,38 +1,40 @@
-import axios from "axios";
+import axios from 'axios'
+import { ApiResponse } from '../interfaces/actions/ApiResponse'
 
 export default {
-	runGraphQLRequest(
-		request_type: string,
-		type: string,
-		action: string,
-		fields: any
-	): Promise<any> {
-		// const query = jsonToGraphQLQuery(fields, { pretty: true });
+  runGraphQLRequest(
+    requesType: string,
+    type: string,
+    action: string,
+    fields: string,
+  ): Promise<any> {
+    // const query = jsonToGraphQLQuery(fields, { pretty: true });
 
-		const options = {
-			method: request_type,
-			url: "/graphql",
-			headers: {
-				"content-type": "application/json",
-			},
-			data: {
-				[type]: fields,
-			},
-			proxy: {
-				host: "localhost",
-				port: 3001,
-			},
-		};
+    const options = {
+      method: requesType,
+      url: '/graphql',
+      headers: {
+        'content-type': 'application/json',
+      },
+      data: {
+        [type]: fields,
+      },
+      proxy: {
+        host: 'localhost',
+        port: 3001,
+      },
+    }
 
-		return new Promise((resolve, reject) => {
-			axios
-				.request(options)
-				.then((result) => {
-					resolve(result.data.data[action]);
-				})
-				.catch((error: any) => {
-					reject();
-				});
-		});
-	},
-};
+    return new Promise((resolve, reject) => {
+      axios
+        .request(options)
+        .then((result: ApiResponse) => {
+          resolve(result.data.data.categories) // result.data.data[action]
+        })
+        .catch((error: any) => {
+          console.log(error)
+          reject()
+        })
+    })
+  },
+}

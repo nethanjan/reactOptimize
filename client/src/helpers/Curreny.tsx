@@ -1,22 +1,22 @@
 function Currency(currency: string) {
-	let currencySymbol: string = "";
+  let currencySymbol = ''
 
-	switch (currency) {
-		case "EUR":
-			currencySymbol = "€";
-			break;
-		case "GBP":
-			currencySymbol = "£";
-			break;
-		case "USD":
-			currencySymbol = "$";
-			break;
-		default:
-			currencySymbol = "€";
-			break;
-	}
+  switch (currency) {
+    case 'EUR':
+      currencySymbol = '€'
+      break
+    case 'GBP':
+      currencySymbol = '£'
+      break
+    case 'USD':
+      currencySymbol = '$'
+      break
+    default:
+      currencySymbol = '€'
+      break
+  }
 
-	return currencySymbol;
+  return currencySymbol
 }
 
-export default Currency;
+export default Currency
